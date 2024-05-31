@@ -44,10 +44,12 @@ while keep_going == 'y':
             if 1 <= compare_list <= len(motorcycles):
                 vehicles_to_compare.append(motorcycles[compare_list - 1])
                 print(f"{motorcycles[compare_list - 1].make} added!")
+                motorcycles.remove(motorcycles[compare_list - 1])
         if view == 't':
             if 1 <= compare_list <= len(trucks):
                 vehicles_to_compare.append(trucks[compare_list - 1])
                 print(f"{trucks[compare_list - 1].make} added!")
+                trucks.remove(trucks[compare_list - 1])
         keep_going = input('Would you like to look at more vehicles? (y/n) >> ')
     else:
         print('Not a valid option, please try again.')
