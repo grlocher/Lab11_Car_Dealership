@@ -56,7 +56,19 @@ while keep_going == 'y':
 
 
 # Printing the vehicle type and the noise
+number = 1
 for vehicle in vehicles_to_compare:
     print()
-    print(f'{vehicle.get_info()}')
+    print(f'{number}: {vehicle.get_info()}')
     vehicle.make_noise()
+    number += 1
+
+# adding option to purchase vehicle
+print()
+purchase = int(input('Which vehicle would you like to purchase? >> ')) - 1
+if isinstance(vehicles_to_compare[purchase], Motorcycle):
+    vehicles_to_compare[purchase].start_engine()
+    print(f"{vehicles_to_compare[purchase].make} purchased!")
+else:
+    vehicles_to_compare[purchase].load_cargo()
+    print(f"{vehicles_to_compare[purchase].make} purchased!")
